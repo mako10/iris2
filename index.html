@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アイリスデータセット</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #graph {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>アイリスデータセット</h1>
+    <div id="graph"></div>
+
+    <script>
+        // データを定義
+        var trace1 = {
+            x: [5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9],
+            y: [3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1],
+            z: [1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5],
+            mode: 'markers',
+            type: 'scatter3d',
+            name: 'Setosa',
+            marker: { color: 'red', size: 8, symbol: 'circle' }
+        };
+
+        var trace2 = {
+            x: [7.0, 6.4, 6.9, 5.5, 6.5, 6.3, 6.0, 5.8, 6.4, 6.6],
+            y: [3.2, 3.2, 3.1, 2.3, 2.8, 2.9, 3.0, 2.5, 2.8, 3.0],
+            z: [4.7, 4.5, 5.7, 4.0, 5.1, 5.2, 5.0, 4.8, 5.4, 5.2],
+            mode: 'markers',
+            type: 'scatter3d',
+            name: 'Versicolor',
+            marker: { color: 'green', size: 8, symbol: 'square' }
+        };
+
+        var trace3 = {
+            x: [6.3, 5.8, 6.5, 7.6, 4.9, 7.3, 6.7, 7.2, 6.5, 6.4],
+            y: [3.3, 2.7, 3.0, 3.0, 3.1, 2.9, 3.1, 3.6, 3.0, 2.5],
+            z: [6.0, 6.3, 5.2, 6.6, 1.5, 6.3, 5.8, 5.9, 6.0, 5.8],
+            mode: 'markers',
+            type: 'scatter3d',
+            name: 'Virginica',
+            marker: { color: 'blue', size: 8, symbol: 'diamond' }
+        };
+
+        var data = [trace1, trace2, trace3];
+
+        var layout = {
+            title: 'Iris Dataset 3D Plot',
+            scene: {
+                xaxis: { title: 'Sepal Length' },
+                yaxis: { title: 'Sepal Width' },
+                zaxis: { title: 'Petal Length' },
+            }
+        };
+
+        Plotly.newPlot('graph', data, layout);
+    </script>
+</body>
+</html>
